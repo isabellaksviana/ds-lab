@@ -1,0 +1,7 @@
+/* Só pra vitrine do Storybook: o fundo e o texto da página vêm dos tokens,
+   pra cada componente aparecer sobre o fundo em que ele vai ser usado. */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+}

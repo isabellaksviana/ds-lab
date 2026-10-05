@@ -1,0 +1,84 @@
+/* ============ Design System: tokens ============
+   Paleta herdada do Lumi: lilás (primary) + amarelo (secondary).
+   Escuro é o tema padrão. Todo texto passa de 7:1 de contraste
+   sobre o fundo em que aparece (nível AAA), nos dois temas.
+   Exceções: botão desabilitado e --secondary no tema claro (ver COMBINADOS).
+
+   Regra de uso das cores de destaque:
+   - primary (lilás): ação e identidade. Botão principal, links, foco.
+   - secondary (amarelo): "em andamento". Projeto em construção, o que estou estudando.
+     Exceção: também é o destaque do rótulo mono (.label).
+   - success (verde): deu certo, pronto, no ar.
+   - danger (vermelho): ação destrutiva. Texto de erro usa --danger-text.
+
+   Os "-soft" são cores fixas (não transparentes): assim o texto passa
+   de 7:1 tanto no fundo quanto no cartão. */
+:root,
+[data-theme='dark'] {
+  --bg: #121319;
+  --surface: #1b1d26;
+  --surface-strong: #252836;
+  --border: #343849;
+  --text: #e6e8ef;
+  --text-muted: #afb4c4;
+
+  --primary: #b89cff;
+  --primary-soft: #211c36;
+  --on-primary: #121319;
+
+  --secondary: #f6d365;
+  --secondary-soft: #2d2a22;
+  --on-secondary: #121319;
+  --on-secondary-soft: #f6d365;
+
+  --success: #7fd6a0;
+  --success-soft: #1a2b22;
+
+  --danger: #8f1d1d;
+  --danger-soft: #2a1416;
+  --on-danger: #fff8f7;
+  /* texto de erro: no escuro, o vermelho do botão some no fundo; aqui ele clareia */
+  --danger-text: #ff8f85;
+
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: #f3f0fb; /* lavanda: nada de branco puro */
+  --surface: #f7f4fb;
+  --surface-strong: #e3dbf0;
+  --border: #cbbfde;
+  --text: #1b1c22;
+  --text-muted: #3e4352;
+
+  --primary: #4a2cb5;
+  --primary-soft: #e9e4f8;
+  --on-primary: #ffffff;
+
+  /* o amarelo puro some no fundo claro. Sozinho, ele escurece só até o mínimo
+     da WCAG (4,5:1), exceção à regra de 7:1 (ver COMBINADOS). Em cima do chip,
+     o texto é mostarda. Não usar em cima do surface-strong. */
+  --secondary: #856300;
+  --secondary-soft: #f7e9cb;
+  --on-secondary: #121319;
+  --on-secondary-soft: #5e4400;
+
+  --success: #134b2c;
+  --success-soft: #e1e6e8;
+
+  --danger: #991b1b;
+  --danger-soft: #f9eaea;
+  --on-danger: #fff8f7;
+  --danger-text: #991b1b;
+
+  color-scheme: light;
+}
+
+:root {
+  --font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  /* arredondamento: mesma escala do Lumi */
+  --radius-sm: 4px; /* tags, badges, foco */
+  --radius-md: 8px; /* botões e controles */
+  --radius-lg: 12px; /* cards e blocos grandes */
+}

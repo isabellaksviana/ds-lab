@@ -1,0 +1,6 @@
+/* Tudo o que um projeto precisa pra usar o DS: os tokens e o estilo dos componentes. */
+@import './tokens.css';
+@import './Button/Button.css';
+@import './Tag/Tag.css';
+@import './Badge/Badge.css';
+@import './IconBox/IconBox.css';

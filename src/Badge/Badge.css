@@ -1,0 +1,18 @@
+.badge {
+  flex: none;
+  padding: 0.25rem 0.6875rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-secondary {
+  background: var(--secondary-soft);
+  color: var(--on-secondary-soft);
+}
+
+.badge-success {
+  background: var(--success-soft);
+  color: var(--success);
+}
