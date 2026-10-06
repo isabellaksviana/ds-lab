@@ -9,6 +9,7 @@ O que mudou em cada versão do Design System.
 - Componente `Tag` (TypeScript): `label` e `variant` (`default`, `secondary`), com stories.
 - Componente `Badge` (TypeScript): `label` e `variant` (`secondary`, `success`), com stories.
 - Componente `IconBox` (TypeScript): ícone num quadrado com fundo; `icon` e `variant` (`primary`, o padrão), com story.
+- Componente `Card` (TypeScript): só a caixa (superfície, borda, raio e espaçamento); o conteúdo vem por `children`. Com story.
 - Token `--live` renomeado para `--success` (e `--live-soft` para `--success-soft`). **Quebra compatibilidade:** quem usava `--live` precisa trocar.
 - Arquivos organizados em uma pasta por componente (`src/Button/`, `src/Tag/`, ...).
 - Ícones dentro do `Button` têm tamanho fixo de `1rem`, definido pelo DS (quem usa não passa `size`).

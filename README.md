@@ -5,8 +5,7 @@ Tokens e componentes em React que eu uso nos meus projetos. Escrito do zero, com
 ## O que tem aqui
 
 - `src/tokens.css`: cores (temas claro e escuro), fontes e arredondamento.
-- `src/Button/`, `src/Tag/`, `src/Badge/`, `src/IconBox/`: cada componente na sua pasta, com o `.tsx`, o `.css` e as stories.
-- `COMBINADOS.md`: as regras do DS, cada uma com o porquê.
+- `src/Button/`, `src/Tag/`, `src/Badge/`, `src/IconBox/`, `src/Card/`: cada componente na sua pasta, com o `.tsx`, o `.css` e as stories.
 - `CHANGELOG.md`: o que mudou em cada versão.
 
 ## Como usar
@@ -21,6 +20,10 @@ import { Button } from 'ds-lab';
 ```
 
 ## Storybook
+
+No ar: https://ds-lab.isabellaviana.com
+
+Pra rodar localmente:
 
 ```
 npm install
