@@ -4,6 +4,7 @@ O que mudou em cada versão do Design System.
 
 ## Não lançado
 
+- Documentação no Storybook: cada componente tem uma página "Docs" com as stories, o código de cada exemplo e a tabela de props com a explicação de cada uma (comentários JSDoc nos tipos). A página Docs é escura, e os exemplos seguem o tema escolhido na barra.
 - `Button` em TypeScript, com dois modos: sem `href`, aceita os atributos de `<button>` (como `disabled`); com `href`, aceita os de `<a>`. Misturar os dois (ex.: `href` + `disabled`) dá erro de tipo.
 - Stories `Danger`, `Disabled`, `Link` e `WithIcon` do `Button`.
 - Componente `Tag` (TypeScript): `label` e `variant` (`default`, `secondary`), com stories.

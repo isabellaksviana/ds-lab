@@ -5,3 +5,9 @@ body {
   color: var(--text);
   font-family: var(--font);
 }
+
+/* Na página Docs, o quadro de cada exemplo usa o fundo do tema escolhido na
+   barra, pra o componente aparecer sobre o fundo certo. */
+.docs-story {
+  background: var(--bg) !important;
+}
