@@ -2,11 +2,11 @@
    Paleta herdada do Lumi: lilás (primary) + amarelo (secondary).
    Escuro é o tema padrão. Todo texto passa de 7:1 de contraste
    sobre o fundo em que aparece (nível AAA), nos dois temas.
-   Exceções: botão desabilitado e --secondary no tema claro (ver COMBINADOS).
+   Exceção: botão desabilitado (ver COMBINADOS).
 
    Regra de uso das cores de destaque:
    - primary (lilás): ação e identidade. Botão principal, links, foco.
-   - secondary (amarelo): "em andamento". Projeto em construção, o que estou estudando.
+   - secondary (amarelo; âmbar dourado no claro): "em andamento". Projeto em construção, o que estou estudando.
      Exceção: também é o destaque do rótulo mono (.label).
    - success (verde): deu certo, pronto, no ar.
    - danger (vermelho): ação destrutiva. Texto de erro usa --danger-text.
@@ -55,13 +55,13 @@
   --primary-soft: #e9e4f8;
   --on-primary: #ffffff;
 
-  /* o amarelo puro some no fundo claro. Sozinho, ele escurece só até o mínimo
-     da WCAG (4,5:1), exceção à regra de 7:1 (ver COMBINADOS). Em cima do chip,
-     o texto é mostarda. Não usar em cima do surface-strong. */
-  --secondary: #856300;
-  --secondary-soft: #f7e9cb;
+  /* o amarelo puro some no fundo claro, e só escurecido ele vira oliva.
+     Aqui ele gira pro âmbar dourado enquanto escurece: passa de 7:1 no fundo
+     e no cartão (ver COMBINADOS). No surface-strong fica em 6:1, não usar ali. */
+  --secondary: #724700;
+  --secondary-soft: #f8e6c4;
   --on-secondary: #121319;
-  --on-secondary-soft: #5e4400;
+  --on-secondary-soft: #6a3d00;
 
   --success: #134b2c;
   --success-soft: #e1e6e8;
