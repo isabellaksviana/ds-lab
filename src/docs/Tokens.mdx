@@ -1,0 +1,223 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+
+<Meta title="Fundamentos/Tokens" />
+
+# Tokens
+
+Tokens são as decisões visuais do ds-lab guardadas em variáveis CSS: cores, fontes e arredondamento. Os componentes não usam valor solto. Quando uma decisão muda, ela muda no token, e todo componente que usa o token acompanha.
+
+## Como usar
+
+Importe os estilos do DS uma vez, na entrada do projeto. Os tokens vêm junto:
+
+```js
+import 'ds-lab/styles.css';
+```
+
+Se o projeto só precisar dos tokens, sem os componentes:
+
+```js
+import 'ds-lab/tokens.css';
+```
+
+Depois, use o token pelo nome, nunca o valor:
+
+```css
+.meu-bloco {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+```
+
+## Temas
+
+O ds-lab tem dois temas, e **o escuro é o padrão**. Quem escolhe o tema é o atributo `data-theme` no `<html>`:
+
+```html
+<html data-theme="dark">  <!-- ou "light" -->
+```
+
+Os nomes dos tokens são os mesmos nos dois temas, só os valores mudam. Por isso um componente não precisa saber em que tema está. Nas amostras abaixo, cada token mostra os dois valores: **escuro** à esquerda, **claro** à direita.
+
+## Cores
+
+**Todo texto passa de 7:1 de contraste** sobre o fundo em que aparece, nos dois temas (nível AAA da WCAG). É mais que o mínimo comum (4,5:1), pra leitura ficar confortável pra qualquer pessoa, inclusive com baixa visão. A única exceção é o botão desabilitado.
+
+### Base
+
+O chão de toda tela: fundos, bordas e texto.
+
+<ColorPalette>
+  <ColorItem
+    title="--bg"
+    subtitle="Fundo da página. No claro, lavanda: nada de branco puro."
+    colors={{ Escuro: '#121319', Claro: '#f3f0fb' }}
+  />
+  <ColorItem
+    title="--surface"
+    subtitle="Cartões e blocos. Bem perto do fundo: quem separa o cartão é a borda."
+    colors={{ Escuro: '#1b1d26', Claro: '#f7f4fb' }}
+  />
+  <ColorItem
+    title="--surface-strong"
+    subtitle="Fundo de hover e áreas que pedem mais destaque."
+    colors={{ Escuro: '#252836', Claro: '#e3dbf0' }}
+  />
+  <ColorItem
+    title="--border"
+    subtitle="Bordas e divisórias."
+    colors={{ Escuro: '#343849', Claro: '#cbbfde' }}
+  />
+  <ColorItem
+    title="--text"
+    subtitle="Texto principal. 15:1 sobre o fundo."
+    colors={{ Escuro: '#e6e8ef', Claro: '#1b1c22' }}
+  />
+  <ColorItem
+    title="--text-muted"
+    subtitle="Texto de apoio: descrições, legendas. Passa de 8:1."
+    colors={{ Escuro: '#afb4c4', Claro: '#3e4352' }}
+  />
+</ColorPalette>
+
+### Destaque
+
+Cada cor de destaque tem **um papel só**. A cor comunica o papel, então ela não é usada como enfeite.
+
+<ColorPalette>
+  <ColorItem
+    title="--primary"
+    subtitle="Lilás: ação e identidade. Botão principal, links, foco."
+    colors={{ Escuro: '#b89cff', Claro: '#4a2cb5' }}
+  />
+  <ColorItem
+    title="--secondary"
+    subtitle="Amarelo: em andamento (ex.: projeto em construção). No claro vira âmbar dourado, porque o amarelo puro some no fundo claro."
+    colors={{ Escuro: '#f6d365', Claro: '#724700' }}
+  />
+  <ColorItem
+    title="--success"
+    subtitle="Verde: deu certo, pronto, no ar."
+    colors={{ Escuro: '#7fd6a0', Claro: '#134b2c' }}
+  />
+  <ColorItem
+    title="--danger"
+    subtitle="Vermelho: ação destrutiva, que apaga ou não tem volta. Fundo de botão."
+    colors={{ Escuro: '#8f1d1d', Claro: '#991b1b' }}
+  />
+  <ColorItem
+    title="--danger-text"
+    subtitle="Texto de erro. No escuro, o vermelho do botão some no fundo, então o texto ganha um vermelho mais claro."
+    colors={{ Escuro: '#ff8f85', Claro: '#991b1b' }}
+  />
+</ColorPalette>
+
+### Versões suaves e texto em cima de cor
+
+Os tokens `-soft` são o fundo dos chips (tags e badges). São **cores fixas, não transparentes**: com transparência, o chip mudaria de cor conforme o fundo, e o texto podia cair abaixo de 7:1 em cima de um cartão.
+
+Os tokens `on-` são o texto que vai **em cima** de uma cor de destaque. Por exemplo, `--on-primary` é o texto do botão principal.
+
+<ColorPalette>
+  <ColorItem
+    title="--primary-soft"
+    subtitle="Fundo suave do lilás."
+    colors={{ Escuro: '#211c36', Claro: '#e9e4f8' }}
+  />
+  <ColorItem
+    title="--secondary-soft · --on-secondary-soft"
+    subtitle="Chip amarelo: fundo e texto."
+    colors={{ 'Fundo escuro': '#2d2a22', 'Texto escuro': '#f6d365', 'Fundo claro': '#f8e6c4', 'Texto claro': '#6a3d00' }}
+  />
+  <ColorItem
+    title="--success-soft"
+    subtitle="Fundo do badge verde (o texto usa --success)."
+    colors={{ Escuro: '#1a2b22', Claro: '#e1e6e8' }}
+  />
+  <ColorItem
+    title="--danger-soft"
+    subtitle="Fundo suave do vermelho."
+    colors={{ Escuro: '#2a1416', Claro: '#f9eaea' }}
+  />
+  <ColorItem
+    title="--on-primary · --on-secondary · --on-danger"
+    subtitle="Texto em cima do lilás, do amarelo e do vermelho."
+    colors={{ 'on-primary escuro': '#121319', 'on-primary claro': '#ffffff', 'on-secondary': '#121319', 'on-danger': '#fff8f7' }}
+  />
+</ColorPalette>
+
+### Contraste conferido
+
+Menor contraste de cada par, entre o fundo da página e o cartão:
+
+<table>
+  <thead>
+    <tr><th>Par</th><th>Escuro</th><th>Claro</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>--text</code> sobre fundo</td><td>13,7:1</td><td>15,1:1</td></tr>
+    <tr><td><code>--text-muted</code> sobre fundo</td><td>8,1:1</td><td>8,8:1</td></tr>
+    <tr><td><code>--primary</code> sobre fundo</td><td>7,4:1</td><td>8,1:1</td></tr>
+    <tr><td><code>--secondary</code> sobre fundo</td><td>11,5:1</td><td>7,1:1</td></tr>
+    <tr><td><code>--success</code> sobre fundo</td><td>9,6:1</td><td>9,0:1</td></tr>
+    <tr><td><code>--danger-text</code> sobre fundo</td><td>7,6:1</td><td>7,4:1</td></tr>
+    <tr><td><code>--on-primary</code> sobre <code>--primary</code></td><td>8,2:1</td><td>9,1:1</td></tr>
+    <tr><td><code>--on-danger</code> sobre <code>--danger</code></td><td>8,5:1</td><td>7,9:1</td></tr>
+    <tr><td><code>--primary</code> sobre <code>--primary-soft</code></td><td>7,2:1</td><td>7,3:1</td></tr>
+    <tr><td><code>--on-secondary-soft</code> sobre <code>--secondary-soft</code></td><td>9,8:1</td><td>7,5:1</td></tr>
+    <tr><td><code>--success</code> sobre <code>--success-soft</code></td><td>8,5:1</td><td>8,1:1</td></tr>
+  </tbody>
+</table>
+
+**Limite:** no tema claro, o `--secondary` cai pra 6:1 sobre o `--surface-strong`. Não use texto amarelo em cima do fundo forte.
+
+## Tipografia
+
+<table>
+  <thead>
+    <tr><th>Token</th><th>Fonte</th><th>Uso</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--font</code></td>
+      <td style={{ fontFamily: 'var(--font)', fontSize: '1.125rem' }}>Inter</td>
+      <td>Todo o texto da interface.</td>
+    </tr>
+    <tr>
+      <td><code>--font-mono</code></td>
+      <td style={{ fontFamily: 'var(--font-mono)', fontSize: '1rem' }}>JetBrains Mono</td>
+      <td>Código e rótulos curtos de apoio (datas, assinatura). Nunca em título ou texto corrido.</td>
+    </tr>
+  </tbody>
+</table>
+
+As fontes não vêm embutidas no DS: o projeto carrega Inter e JetBrains Mono (pelo Google Fonts, por exemplo). Se não carregar, cada token tem fontes de reserva do sistema.
+
+## Arredondamento
+
+Arredondamento vem sempre de token, nunca de número solto.
+
+<div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', margin: '1.5rem 0' }}>
+  {[
+    ['--radius-sm', '4px', 'Tags, badges e o contorno de foco'],
+    ['--radius-md', '8px', 'Botões e controles'],
+    ['--radius-lg', '12px', 'Cards e blocos grandes'],
+  ].map(([name, size, use]) => (
+    <div key={name} style={{ width: '12rem' }}>
+      <div
+        style={{
+          height: '5rem',
+          border: '2px solid var(--primary)',
+          background: 'var(--primary-soft)',
+          borderRadius: `var(${name})`,
+        }}
+      />
+      <p style={{ margin: '0.75rem 0 0' }}>
+        <code>{name}</code> · {size}
+      </p>
+      <p style={{ margin: '0.25rem 0 0', fontSize: '0.875rem' }}>{use}</p>
+    </div>
+  ))}
+</div>
