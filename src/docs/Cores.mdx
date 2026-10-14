@@ -1,0 +1,32 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as CoresStories from './Cores.stories';
+
+<Meta of={CoresStories} />
+
+# Cores
+
+**Todo texto passa de 7:1 de contraste** sobre o fundo em que aparece, nos dois temas (nível AAA da WCAG). É mais que o mínimo comum (4,5:1), pra leitura ficar confortável pra qualquer pessoa, inclusive com baixa visão. A única exceção é o botão desabilitado.
+
+As fichas abaixo leem os tokens de verdade: **troque o tema na barra** e as amostras, os valores e o contraste mudam juntos.
+
+## Base
+
+O chão de toda tela: fundos, bordas e texto. Nos fundos, o contraste é o do texto de apoio (`--text-muted`) em cima dele, que é o pior caso.
+
+<Canvas of={CoresStories.Base} sourceState="none" />
+
+## Destaque
+
+Cada cor de destaque tem **um papel só**. A cor comunica o papel, então ela não é usada como enfeite.
+
+<Canvas of={CoresStories.Destaque} sourceState="none" />
+
+**Limite:** no tema claro, o `--secondary` cai pra 6:1 sobre o `--surface-strong`. Não use texto amarelo em cima do fundo forte.
+
+## Versões suaves e texto em cima de cor
+
+Os tokens `-soft` são o fundo dos chips (tags e badges). São **cores fixas, não transparentes**: com transparência, o chip mudaria de cor conforme o fundo, e o texto podia cair abaixo de 7:1 em cima de um cartão.
+
+Os tokens `on-` são o texto que vai **em cima** de uma cor de destaque. Por exemplo, `--on-primary` é o texto do botão principal.
+
+<Canvas of={CoresStories.Suaves} sourceState="none" />

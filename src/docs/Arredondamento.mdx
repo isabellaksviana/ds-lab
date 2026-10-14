@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Fundamentos/Arredondamento" />
+
+# Arredondamento
+
+Arredondamento vem sempre de token, nunca de número solto. A escala é a mesma da Lumi.
+
+<div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', margin: '1.5rem 0' }}>
+  {[
+    ['--radius-sm', '4px', 'Tags, badges e o contorno de foco'],
+    ['--radius-md', '8px', 'Botões e controles'],
+    ['--radius-lg', '12px', 'Cards e blocos grandes'],
+  ].map(([name, size, use]) => (
+    <div key={name} style={{ width: '12rem' }}>
+      <div
+        style={{
+          height: '5rem',
+          border: '2px solid var(--primary)',
+          background: 'var(--primary-soft)',
+          borderRadius: `var(${name})`,
+        }}
+      />
+      <p style={{ margin: '0.75rem 0 0' }}>
+        <code>{name}</code> · {size}
+      </p>
+      <p style={{ margin: '0.25rem 0 0', fontSize: '0.875rem' }}>{use}</p>
+    </div>
+  ))}
+</div>
+
+O raio fica em `px` (e não em `rem`) porque é um detalhe fino: com zoom, o canto não precisa crescer junto com o texto.

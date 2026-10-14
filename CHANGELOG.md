@@ -4,7 +4,8 @@ O que mudou em cada versão do Design System.
 
 ## Não lançado
 
-- Página "Fundamentos/Tokens" no Storybook (`src/docs/Tokens.mdx`): como usar os tokens, como funcionam os temas, todas as cores com os valores do escuro e do claro e o papel de cada uma, tabela de contraste conferido (todos os pares passam de 7:1), fontes e arredondamento. O Storybook passou a ler páginas `.mdx`.
+- Tema escuro: a base puxa pro roxo, na família do lilás (`--bg` `#131219`, `--surface` `#1d1b26`, `--surface-strong` `#282536`, `--border` `#383449`). Mesma escuridão de antes; todo texto continua passando de 7:1.
+- Documentação dividida em páginas por assunto, em "Fundamentos": Como usar, Cores, Tipografia e Arredondamento (substituem a página "Tokens"). Em Cores, cada token é uma linha de ficha (amostra, nome, valor, uso e contraste) que lê o valor do tema ativo: as amostras, os valores e o contraste trocam junto com o tema da barra, e nenhum hex fica escrito à mão na documentação.
 - Tema claro: o amarelo virou âmbar dourado (`--secondary` `#724700`, `--secondary-soft` `#f8e6c4`, `--on-secondary-soft` `#6a3d00`). Agora passa de 7:1 no fundo e no cartão, e deixa de ser exceção à regra de contraste. O tema escuro não muda.
 - Documentação no Storybook: cada componente tem uma página "Docs" com as stories, o código de cada exemplo e a tabela de props com a explicação de cada uma (comentários JSDoc nos tipos). A página Docs é escura, e os exemplos seguem o tema escolhido na barra.
 - `Button` em TypeScript, com dois modos: sem `href`, aceita os atributos de `<button>` (como `disabled`); com `href`, aceita os de `<a>`. Misturar os dois (ex.: `href` + `disabled`) dá erro de tipo.

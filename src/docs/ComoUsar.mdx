@@ -1,0 +1,48 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Fundamentos/Como usar" />
+
+# Como usar os tokens
+
+Tokens são as decisões visuais do ds-lab guardadas em variáveis CSS: cores, fontes e arredondamento. Os componentes não usam valor solto. Quando uma decisão muda, ela muda no token, e todo componente que usa o token acompanha.
+
+## Importar
+
+Importe os estilos do DS uma vez, na entrada do projeto. Os tokens vêm junto:
+
+```js
+import 'ds-lab/styles.css';
+```
+
+Se o projeto só precisar dos tokens, sem os componentes:
+
+```js
+import 'ds-lab/tokens.css';
+```
+
+Depois, use o token pelo nome, nunca o valor:
+
+```css
+.meu-bloco {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+```
+
+## Temas
+
+O ds-lab tem dois temas, e **o escuro é o padrão**. Quem escolhe o tema é o atributo `data-theme` no `<html>`:
+
+```html
+<html data-theme="dark">  <!-- ou "light" -->
+```
+
+Os nomes dos tokens são os mesmos nos dois temas, só os valores mudam. Por isso um componente não precisa saber em que tema está.
+
+## As páginas
+
+- **Cores:** fundos, texto e as cores de destaque, com o contraste de cada uma.
+- **Tipografia:** as duas fontes e onde cada uma entra.
+- **Arredondamento:** a escala de cantos.

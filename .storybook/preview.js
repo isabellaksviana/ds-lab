@@ -1,5 +1,7 @@
 import '../src/styles.css';
 import './preview.css';
+// CSS das páginas de Fundamentos: só existe no Storybook, não vai pro styles.css do DS.
+import '../src/docs/TokenTable.css';
 import { themes } from 'storybook/theming';
 
 /** @type { import('@storybook/react-vite').Preview } */
@@ -10,6 +12,12 @@ const preview = {
   parameters: {
     // A página Docs é escura, como o tema padrão do DS.
     docs: { theme: themes.dark },
+    // Fundamentos primeiro, na ordem de leitura; depois os componentes.
+    options: {
+      storySort: {
+        order: ['Fundamentos', ['Como usar', 'Cores', 'Tipografia', 'Arredondamento'], '*'],
+      },
+    },
   },
   // Botão de tema na barra do Storybook. Escuro é o padrão do DS.
   globalTypes: {

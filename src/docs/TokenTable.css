@@ -1,0 +1,65 @@
+/* Ficha de tokens de cor: uma linha por token
+   (amostra · nome e valor · uso · contraste). */
+.token-table {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font);
+  color: var(--text);
+}
+
+.token-row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(9rem, 12rem) 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.token-row:first-child {
+  border-top: 0;
+}
+
+.token-swatch {
+  height: 2.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.token-name {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text);
+}
+
+.token-value,
+.token-ratio {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.token-use {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.token-ratio {
+  white-space: nowrap;
+}
+
+/* tela estreita: a amostra fica na coluna da esquerda e o resto empilha */
+@media (max-width: 40rem) {
+  .token-row {
+    grid-template-columns: 3rem 1fr;
+  }
+
+  .token-use,
+  .token-ratio {
+    grid-column: 2;
+  }
+}

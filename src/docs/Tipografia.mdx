@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Fundamentos/Tipografia" />
+
+# Tipografia
+
+<table>
+  <thead>
+    <tr><th>Token</th><th>Fonte</th><th>Uso</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--font</code></td>
+      <td style={{ fontFamily: 'var(--font)', fontSize: '1.125rem' }}>Inter</td>
+      <td>Todo o texto da interface.</td>
+    </tr>
+    <tr>
+      <td><code>--font-mono</code></td>
+      <td style={{ fontFamily: 'var(--font-mono)', fontSize: '1rem' }}>JetBrains Mono</td>
+      <td>Código e rótulos curtos de apoio (datas, assinatura). Nunca em título ou texto corrido.</td>
+    </tr>
+  </tbody>
+</table>
+
+As fontes não vêm embutidas no DS: o projeto carrega Inter e JetBrains Mono (pelo Google Fonts, por exemplo). Se não carregar, cada token tem fontes de reserva do sistema.
+
+O texto base tem 16px (`1rem`), e as medidas são em `rem`: assim a interface respeita o zoom e o tamanho de fonte escolhido no navegador.

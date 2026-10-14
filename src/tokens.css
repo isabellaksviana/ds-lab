@@ -15,10 +15,10 @@
    de 7:1 tanto no fundo quanto no cartão. */
 :root,
 [data-theme='dark'] {
-  --bg: #121319;
-  --surface: #1b1d26;
-  --surface-strong: #252836;
-  --border: #343849;
+  --bg: #131219; /* roxo bem escuro, na família do lilás */
+  --surface: #1d1b26;
+  --surface-strong: #282536;
+  --border: #383449;
   --text: #e6e8ef;
   --text-muted: #afb4c4;
 
