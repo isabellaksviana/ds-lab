@@ -47,7 +47,7 @@ export const WithComponents: Story = {
         </p>
         <Tag label="antoine de saint-exupéry" />
         <Tag label="o pequeno príncipe" />
-        <Tag label="lendo agora" variant="secondary" />
+        <Tag label="★ favorito" variant="secondary" />
       </>
     ),
   },

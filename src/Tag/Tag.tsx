@@ -3,7 +3,7 @@ type TagProps = {
   label: string;
   /**
    * `default` (contorno cinza) para classificar.
-   * `secondary` (contorno tracejado amarelo) para algo em andamento.
+   * `secondary` (contorno tracejado; amarelo no escuro, rosa no claro) para destacar.
    */
   variant?: 'default' | 'secondary';
 };

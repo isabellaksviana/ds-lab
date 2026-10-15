@@ -3,9 +3,9 @@ type BadgeProps = {
   label: string;
   /**
    * `success` (verde) para pronto, no ar, deu certo.
-   * `secondary` (amarelo) para algo em andamento.
+   * `warning` (amarelo no escuro, âmbar no claro) para algo em andamento.
    */
-  variant?: 'secondary' | 'success';
+  variant?: 'success' | 'warning';
 };
 
 /**

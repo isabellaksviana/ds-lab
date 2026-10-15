@@ -8,10 +8,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Secondary: Story = {
+export const Warning: Story = {
   args: {
     label: 'Em andamento',
-    variant: 'secondary',
+    variant: 'warning',
   },
 };
 

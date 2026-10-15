@@ -50,8 +50,13 @@ export const accentTokens: ColorToken[] = [
   },
   {
     name: '--secondary',
-    use: 'Amarelo: em andamento. No claro vira âmbar dourado, porque o amarelo puro some no fundo claro.',
+    use: 'Destaque e identidade: o destaque do rótulo mono e a tag de destaque. Amarelo no escuro, rosa-orquídea no claro.',
     contrast: ['--secondary', '--bg'],
+  },
+  {
+    name: '--warning',
+    use: 'Em andamento: projeto em construção. Amarelo no escuro; no claro vira âmbar, porque o amarelo puro some no fundo claro.',
+    contrast: ['--warning', '--bg'],
   },
   {
     name: '--success',
@@ -78,13 +83,18 @@ export const softTokens: ColorToken[] = [
   },
   {
     name: '--secondary-soft',
-    use: 'Fundo do chip amarelo.',
+    use: 'Fundo suave do destaque.',
     contrast: ['--on-secondary-soft', '--secondary-soft'],
   },
   {
     name: '--on-secondary-soft',
-    use: 'Texto do chip amarelo.',
+    use: 'Texto em cima do fundo suave do destaque.',
     contrast: ['--on-secondary-soft', '--secondary-soft'],
+  },
+  {
+    name: '--warning-soft',
+    use: 'Fundo do badge de em andamento, com texto --warning.',
+    contrast: ['--warning', '--warning-soft'],
   },
   {
     name: '--success-soft',
